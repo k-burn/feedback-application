@@ -10,11 +10,11 @@ class InputTwo extends Component {
     }
 
 
-    handleChange = (event) => {
+    handleSlide = (event) => {
         this.setState({
           [event.target.name]: event.target.value
         });
-      }
+    }
 
     handleNextButtonClick = () => {
         console.log('Next button has been clicked');
@@ -30,7 +30,12 @@ class InputTwo extends Component {
                 <h1>InputTwo</h1>
                 <h3>How well did you understand the material from this week?</h3>
                 <label>Input a number between 1 and 5 </label>
-                <input className="feeling" type="integer" placeholder= "1-5" name="input2" onChange={this.handleChange}></input>
+                <input 
+                    name="input2"
+                    type="range" 
+                    min="0" max="5" 
+                    onChange={this.handleSlide}
+                    step="1"/>
                 <button className="next" onClick={this.handleNextButtonClick}>Next</button>
             </div> 
         )

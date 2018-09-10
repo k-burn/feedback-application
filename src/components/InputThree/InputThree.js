@@ -9,7 +9,7 @@ class InputThree extends Component {
         }
     }
 
-    handleChange = (event) => {
+    handleSlide = (event) => {
         this.setState({
           [event.target.name]: event.target.value
         });
@@ -29,7 +29,12 @@ class InputThree extends Component {
                 <h1>InputThree</h1>
                 <h3>Did you feel supported this week?</h3>
                 <label>Input a number between 1 and 5 </label>
-                <input className="feeling" name="input3" type="integer" placeholder= "1-5" onChange={this.handleChange}></input>
+                <input 
+                    name="input3"
+                    type="range" 
+                    min="0" max="5" 
+                    onChange={this.handleSlide}
+                    step="1"/>
                 <button className="next" onClick={this.handleNextButtonClick}>Next</button>
             </div> 
         )
