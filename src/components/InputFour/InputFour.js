@@ -5,7 +5,7 @@ class InputFour extends Component {
     constructor (props){
         super(props);
         this.state = {
-            input4: '',
+            input4: '3',
         }
     }
 

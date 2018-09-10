@@ -28,13 +28,14 @@ class InputThree extends Component {
             <div>
                 <h1>InputThree</h1>
                 <h3>Did you feel supported this week?</h3>
-                <label>Input a number between 0 and 5 </label>
+                <label>Input a number between  and 5 </label>
                 <div className="sliderContainer">
                     <input 
                     className="slider"
                     name="input3"
                     type="range" 
-                    min="0" max="5" 
+                    min="1" max="5" 
+                    value={this.state.input3}
                     onChange={this.handleSlide}
                     step="1"/>
                  <p >{this.state.input3}</p>

@@ -5,7 +5,7 @@ class InputTwo extends Component {
     constructor (props){
         super(props);
         this.state = {
-            input2: '',
+            input2: '3',
         }
     }
 
@@ -29,13 +29,14 @@ class InputTwo extends Component {
             <div>
                 <h1>InputTwo</h1>
                 <h3>How well did you understand the material from this week?</h3>
-                <label>Input a number between 0 and 5 </label>
+                <label>Input a number between 1 and 5 </label>
                 <div className="sliderContainer">
                     <input 
                     className= "slider"
                     name="input2"
                     type="range" 
-                    min="0" max="5" 
+                    min="1" max="5"
+                    value={this.state.input2} 
                     onChange={this.handleSlide}
                     step="1"/>
                 <p >{this.state.input2}</p>
