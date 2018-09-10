@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
   console.log('in POST /feedback', req.body);
   const feedback = req.body;
   const queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`;
-  pool.query(queryText, [feedback.inputFeedback.input1, feedback.inputFeedback.input2, feedback.inputFeedback.input3, feedback.inputFeedback.input4])
+  pool.query(queryText, [feedback.input1Feedback, feedback.input2Feedback, feedback.input3Feedback, feedback.input4Feedback])
     .then((result)=>{
         res.sendStatus(201);
     })

@@ -5,7 +5,7 @@ class InputThree extends Component {
     constructor (props){
         super(props);
         this.state = {
-            input3: [],
+            input3: '',
         }
     }
 
@@ -17,7 +17,7 @@ class InputThree extends Component {
 
     handleNextButtonClick = () => {
         console.log('Next button has been clicked');
-        const action = {type: 'ADD_FEEDBACK', payload: this.state};
+        const action = {type: 'ADD_INPUT_3', payload: this.state.input3};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
         this.props.history.push('4')

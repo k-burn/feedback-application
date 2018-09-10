@@ -7,9 +7,27 @@ import {createStore , combineReducers, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const inputFeedback = (state = {}, action)=>{
-    if (action.type === 'ADD_FEEDBACK'){
-        return [...state, action.payload];
+const input1Feedback = (state = {}, action)=>{
+    if (action.type === 'ADD_INPUT_1'){
+        return action.payload;
+    }
+    return state;
+}
+const input2Feedback = (state = {}, action)=>{
+    if (action.type === 'ADD_INPUT_2'){
+        return action.payload;
+    }
+    return state;
+}
+const input3Feedback = (state = {}, action)=>{
+    if (action.type === 'ADD_INPUT_3'){
+        return  action.payload;
+    }
+    return state;
+}
+const input4Feedback = (state = {}, action)=>{
+    if (action.type === 'ADD_INPUT_4'){
+        return  action.payload;
     }
     return state;
 }
@@ -17,7 +35,10 @@ const inputFeedback = (state = {}, action)=>{
 
 const storeInstance = createStore(
     combineReducers({
-        inputFeedback,
+        input1Feedback,
+        input2Feedback,
+        input3Feedback,
+        input4Feedback,
     }),
     applyMiddleware(logger),
 );

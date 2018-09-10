@@ -6,7 +6,7 @@ class InputFour extends Component {
     constructor (props){
         super(props);
         this.state = {
-            input4: [],
+            input4: '',
         }
     }
 
@@ -18,7 +18,7 @@ class InputFour extends Component {
 
     handleSubmitButtonClick = () => {
         console.log('Next button has been clicked');
-        const action = {type: 'ADD_FEEDBACK', payload: this.state};
+        const action = {type: 'ADD_INPUT_4', payload: this.state.input4};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
         this.sendFeedbackToDatabase();
@@ -44,7 +44,10 @@ class InputFour extends Component {
             <div>
                 <h1>Input Four</h1>
                 <h3>Any comments?</h3>
-                <input name ="input4" className="feeling" type="text" placeholder= "type your comment here" onChange={this.handleChange}></input>
+                <textarea name ="input4" className="feeling" type="text" placeholder= "type your comment here" onChange={this.handleChange}
+                    cols="40" 
+                    rows="5" ></textarea>
+                <br/>
                 <button className="next" onClick={this.handleSubmitButtonClick}>Submit Feedback</button>
             </div> 
         )

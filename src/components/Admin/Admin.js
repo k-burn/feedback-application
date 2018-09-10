@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FeedbackRow from './FeedbackRow/FeedbackRow.js';
 import axios from 'axios';
+import './Admin.css'
 
 class Admin extends Component {
     constructor(props) {
