@@ -20,7 +20,7 @@ class InputThree extends Component {
         const action = {type: 'ADD_INPUT_3', payload: this.state.input3};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
-        this.props.history.push('4')
+        this.props.history.push('4');
     }
 
     render(){

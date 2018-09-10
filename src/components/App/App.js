@@ -8,17 +8,29 @@ import InputFour from '../InputFour/InputFour.js';
 import Admin from '../Admin/Admin.js';
 import Complete from '../Complete/Complete.js';
 import Home from '../Home/Home.js';
+import Header from '../Header/Header.js';
+
 
 class App extends Component {
+  constructor (props){
+    super(props);
+    this.state = {
+    }
+  }
+
+  goToAdmin = () => {
+    console.log('clicked');
+    //this.props.history.push('Admin');
+    
+  }
+
   render() {
     return (
       <div>
-         <div className ="App">
-            <header className="App-header">
-              <h1 className="App-title">Feedback!</h1>
-              <h4><i>Don't forget it!</i></h4>
-            </header>
-          </div>
+        <Header />
+        <div className ="App">
+          <button onClick ={this.goToAdmin}>Admin.</button>
+        </div>
         <Router>
           <div>
             <Route exact path = "/" component = {Home}/>
