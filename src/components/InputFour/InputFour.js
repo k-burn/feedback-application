@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import Axios from 'axios';
 
 class InputFour extends Component {
     constructor (props){
@@ -14,30 +13,18 @@ class InputFour extends Component {
         this.setState({
           [event.target.name]: event.target.value
         });
-      }
+    }
 
-    handleSubmitButtonClick = () => {
+
+    handleNextButtonClick= () => {
         console.log('Next button has been clicked');
         const action = {type: 'ADD_INPUT_4', payload: this.state.input4};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
-        this.sendFeedbackToDatabase();
-        //this.props.history.push('Complete')
+        this.props.history.push('Complete');
     }
 
-    sendFeedbackToDatabase = () => {
-        Axios({
-            method: 'POST',
-            url: '/api/feedback',
-            data: this.props.reduxState
-        }).then((response)=>{
-            console.log('Input was successfully sent to the databse', response);
-            
-        }).catch((error)=>{
-            console.log('an error has occurred when trying to send feedback to the database', error);
-            alert('error in submitting feedback')
-        })
-    }
+
 
     render(){
         return(
@@ -48,7 +35,7 @@ class InputFour extends Component {
                     cols="40" 
                     rows="5" ></textarea>
                 <br/>
-                <button className="next" onClick={this.handleSubmitButtonClick}>Submit Feedback</button>
+                <button className="next" onClick ={this.handleNextButtonClick}>Next</button>
             </div> 
         )
     }

@@ -22,7 +22,7 @@ class InputOne extends Component {
         console.log(action.type, action.payload);
         this.props.dispatch(action);
         console.log(action.type, action.payload);
-        this.props.history.push('2')
+        this.props.history.push('2');
     }
 
     render(){

@@ -6,6 +6,7 @@ import InputTwo from '../InputTwo/InputTwo.js';
 import InputThree from '../InputThree/InputThree.js';
 import InputFour from '../InputFour/InputFour.js';
 import Admin from '../Admin/Admin.js';
+import Complete from '../Complete/Complete.js';
 import Home from '../Home/Home.js';
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path = "/3" component = {InputThree}/>
             <Route path = "/4" component = {InputFour}/>
             <Route path = "/admin" component = {Admin}/>
+            <Route path = "/complete" component = {Complete}/>
           </div>
         </Router>
       </div>

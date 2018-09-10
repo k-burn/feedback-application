@@ -21,7 +21,7 @@ class FeedbackRow extends Component{
                 <td>
                     {this.props.feedback.comments}
                 </td>
-                <td><button onClick={this.handleClick}>DELETE</button></td>
+                <td><button onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.handleClick()}}>Delete</button></td>
             </tr>
         )}
 

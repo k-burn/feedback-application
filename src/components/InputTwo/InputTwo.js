@@ -21,7 +21,7 @@ class InputTwo extends Component {
         const action = {type: 'ADD_INPUT_2', payload: this.state.input2};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
-        this.props.history.push('3')
+        this.props.history.push('3');
     }
 
     render(){
