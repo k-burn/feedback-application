@@ -29,13 +29,17 @@ class InputTwo extends Component {
             <div>
                 <h1>InputTwo</h1>
                 <h3>How well did you understand the material from this week?</h3>
-                <label>Input a number between 1 and 5 </label>
-                <input 
+                <label>Input a number between 0 and 5 </label>
+                <div className="sliderContainer">
+                    <input 
+                    className= "slider"
                     name="input2"
                     type="range" 
                     min="0" max="5" 
                     onChange={this.handleSlide}
                     step="1"/>
+                <p >{this.state.input2}</p>
+                </div>
                 <button className="next" onClick={this.handleNextButtonClick}>Next</button>
             </div> 
         )

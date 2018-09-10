@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { HashRouter as Router, Route, Link} from 'react-router-dom';
+import { HashRouter as Router, Route} from 'react-router-dom';
 import InputOne from '../InputOne/InputOne.js';
 import InputTwo from '../InputTwo/InputTwo.js';
 import InputThree from '../InputThree/InputThree.js';
