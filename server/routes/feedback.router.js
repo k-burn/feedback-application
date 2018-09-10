@@ -6,7 +6,7 @@ var pool = require('../modules/pool.js');
 router.get('/', (req, res) => {
     console.log('GET /api/feedback');
     //SQL query to find all feedback and return them
-    const query = `SELECT * FROM "feedback"`
+    const query = `SELECT * FROM "feedback" ORDER BY "date" DESC;`;
     pool.query(query).then((results)=>{
         console.log(results);
         res.send(results.rows);
