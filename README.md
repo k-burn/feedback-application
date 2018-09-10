@@ -1,4 +1,4 @@
-# Redux Feedback Loop
+# Feedback Application
 
 ## Built With
 
@@ -32,5 +32,5 @@ npm run client
 
 - [ ] Style the project using Material-UI
 - [ ] Add the ability to flag an existing feedback entry for further review on the /admin view
-- [ ]Deploy the feedback application to Heroku 
+- [ ] Deploy the feedback application to Heroku 
 
