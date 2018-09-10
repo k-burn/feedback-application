@@ -7,18 +7,18 @@ class InputFour extends Component {
         super(props);
         this.state = {
             input4: [],
-            feedbackToDatabase: {
-                input1: this.props.reduxState.input1,
-                input2: this.props.reduxState.input2,
-                input3: this.props.reduxState.input3,
-                input4: this.props.reduxState.input4,
-            }
         }
     }
 
+    handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      }
+
     handleSubmitButtonClick = () => {
         console.log('Next button has been clicked');
-        const action = {type: 'ADD_FEEDBACK', payload: this.state.input4};
+        const action = {type: 'ADD_FEEDBACK', payload: this.state};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
         this.sendFeedbackToDatabase();
@@ -29,7 +29,7 @@ class InputFour extends Component {
         Axios({
             method: 'POST',
             url: '/api/feedback',
-            data: this.state.feedbackToDatabase
+            data: this.props.reduxState
         }).then((response)=>{
             console.log('Input was successfully sent to the databse', response);
             
@@ -44,7 +44,7 @@ class InputFour extends Component {
             <div>
                 <h1>Input Four</h1>
                 <h3>Any comments?</h3>
-                <input className="feeling" type="text" placeholder= "type your comment here"></input>
+                <input name ="input4" className="feeling" type="text" placeholder= "type your comment here" onChange={this.handleChange}></input>
                 <button className="next" onClick={this.handleSubmitButtonClick}>Submit Feedback</button>
             </div> 
         )

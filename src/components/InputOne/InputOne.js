@@ -5,15 +5,22 @@ class InputOne extends Component {
     constructor (props){
         super(props);
         this.state = {
-            input1: [],
+            input1: '',
         }
     }
 
+    handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      }
+
     handleNextButtonClick = () => {
         console.log('Next button has been clicked');
-        const action = {type: 'ADD_FEEDBACK', payload: this.state.input1};
+        const action = {type: 'ADD_FEEDBACK', payload: this.state};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
+        console.log(action.type, action.payload);
         this.props.history.push('2')
     }
 
@@ -23,7 +30,7 @@ class InputOne extends Component {
                 <h1>InputOne</h1>
                 <h3>How are you feeling this week?</h3>
                 <label>Input a number between 1 and 5 </label>
-                <input className="feeling" type="integer" placeholder= "1-5"></input>
+                <input className="feeling" name="input1" type="integer" placeholder= "1-5" onChange={this.handleChange} ></input>
                 <button className="next" onClick={this.handleNextButtonClick}>Next</button>
             </div> 
         )

@@ -1,6 +1,11 @@
 import React, {Component } from 'react';
 
 class FeedbackRow extends Component{
+
+    handleClick = () => {
+        this.props.deleteFeedback(this.props.feedback.id);
+    }
+
     render(){
         return(
             <tr>
@@ -16,7 +21,7 @@ class FeedbackRow extends Component{
                 <td>
                     {this.props.feedback.comments}
                 </td>
-                <td><button>DELETE</button></td>
+                <td><button onClick={this.handleClick}>DELETE</button></td>
             </tr>
         )}
 

@@ -30,6 +30,20 @@ class Admin extends Component {
         })
     }
 
+    deleteFeedback = (id) => {
+        console.log('in delete feedback');
+        axios({
+            method: 'DELETE',
+            url:'/api/feedback/' + id,
+        }).then((response)=>{
+            console.log(response.data);
+            this.getFeedback();
+        }).catch((error)=>{
+                console.log(error, 'Issue deleting feedback');
+                alert('Feedback could\'t be deleted');
+        })
+    }
+
     render(){
         return(
             <div>
@@ -47,7 +61,8 @@ class Admin extends Component {
                         <tbody>
                             {this.state.feedback.map((feedback, i)=>{
                                 return(
-                                    <FeedbackRow key= {i} feedback={feedback}/>
+                                    <FeedbackRow key= {i} feedback={feedback}
+                                                deleteFeedback={this.deleteFeedback} />
                                 );
                             })}
                         </tbody>

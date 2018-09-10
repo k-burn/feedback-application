@@ -9,9 +9,15 @@ class InputThree extends Component {
         }
     }
 
+    handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+    }
+
     handleNextButtonClick = () => {
         console.log('Next button has been clicked');
-        const action = {type: 'ADD_FEEDBACK', payload: this.state.input3};
+        const action = {type: 'ADD_FEEDBACK', payload: this.state};
         console.log(action.type, action.payload);
         this.props.dispatch(action);
         this.props.history.push('4')
@@ -23,7 +29,7 @@ class InputThree extends Component {
                 <h1>InputThree</h1>
                 <h3>Did you feel supported this week?</h3>
                 <label>Input a number between 1 and 5 </label>
-                <input className="feeling" type="integer" placeholder= "1-5"></input>
+                <input className="feeling" name="input3" type="integer" placeholder= "1-5" onChange={this.handleChange}></input>
                 <button className="next" onClick={this.handleNextButtonClick}>Next</button>
             </div> 
         )

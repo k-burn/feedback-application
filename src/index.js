@@ -9,10 +9,11 @@ import logger from 'redux-logger';
 
 const inputFeedback = (state = {}, action)=>{
     if (action.type === 'ADD_FEEDBACK'){
-        return action.payload;
+        return [...state, action.payload];
     }
     return state;
 }
+
 
 const storeInstance = createStore(
     combineReducers({
