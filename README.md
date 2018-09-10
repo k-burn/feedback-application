@@ -45,6 +45,7 @@ npm run server
 ```
 npm run client
 ```
+5. The home page has not yet been completed and connected to the first feedback input page. For the time being, you can type #/1 at the end of the url path to get to the first slide. I apologize for the incovenience.
 
 ### Completed Features
 - [x] Feature a
