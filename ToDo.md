@@ -25,8 +25,10 @@
 
 
 ##Stretch Goals
-- [ ] Add a special section of the admin page for flagged feedback
 - [ ] Update this README.md to describe the project in your own words
 - [ ] Improve the styling of the app using Material-UI theme, cards, snackbars, buttons, nav bar, and icons, and anything else you'd like.
 - [ ] Add the ability to flag an existing feedback entry for further review on the /admin view
 - [ ] Deploy your project to Heroku -- you'll need to read the special instructions for building and deploying with these apps! 
+- [ ] Add an input if student wants to reach out
+- [ ] Display feedback rows where student would like to reach out at the top of the admin page
+- [ ] 

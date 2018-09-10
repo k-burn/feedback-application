@@ -24,6 +24,12 @@ class App extends Component {
     
   }
 
+ beginFeedback = () => {
+    console.log('clicked');
+    this.props.history.push('');
+    
+  }
+
   render() {
     return (
       <div>

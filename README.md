@@ -14,11 +14,10 @@
 2. Create your database and tables using the provided `data.sql` file. 
 
 ```SQL
--- Database should be prime_feedback
 CREATE DATABASE "prime_feedback";
 
--- Switch to "prime_feedback" before making:
--- Table to store the feedback
+-- Switch to "prime_feedback" before making feedback table
+
 CREATE TABLE "feedback" (
   "id" serial primary key,
   "feeling" INT not null,
